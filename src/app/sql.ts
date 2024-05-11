@@ -1,7 +1,7 @@
 import { createClient, sql } from "@vercel/postgres"
 import { Note } from "./schema"
 
-export async function addtNote(note: Note) {
+export async function insertNote(note: Note) {
   const client = createClient()
   try {
     const {
