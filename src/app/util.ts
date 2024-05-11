@@ -4,7 +4,7 @@ export function localString2Timestamp(localeString: string) {
   const match = localeString.match(regex)
   if (!match || !match.groups) return
   const { month, day, year, hour, minute, second } = match.groups
-  return `${year}/${month}/${day} ${hour}:${minute}:${second}`
+  return `${year}-${month}-${day} ${hour}:${minute}:${second}`
 }
 
 export function isTimeStamp(value: unknown) {
