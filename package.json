@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "create-table": "node --env-file=./.env.local --import tsx scripts/createTable.ts"
+    "create-table": "node --env-file=./.env.local --import tsx scripts/createTable.ts",
+    "test": "node --test --import tsx src/test/*.test.ts",
+    "test-watch": "node --test --watch --import tsx src/test/*.test.ts"
   },
   "dependencies": {
     "@vercel/postgres": "^0.8.0",
