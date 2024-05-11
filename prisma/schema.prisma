@@ -17,5 +17,5 @@ model Note {
   disproof      String   @db.VarChar(255)
   restructuring String   @db.VarChar(255)
   change        String   @db.VarChar(255)
-  time          DateTime @db.Timestamp(6)
+  createdAt DateTime @default(now())
 }
