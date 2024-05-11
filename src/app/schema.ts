@@ -5,6 +5,7 @@ import {
   object,
   minLength,
   safeParse,
+  Output,
 } from "valibot"
 
 export function validateNote(value: unknown) {
@@ -21,3 +22,5 @@ const note = object({
   change: string([minLength(1), maxLength(255)]),
   time: string([isoTimestamp()]),
 })
+
+export type Note = Output<typeof note>
