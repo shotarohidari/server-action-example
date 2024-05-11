@@ -14,9 +14,14 @@ export function validateNote(value: unknown) {
   return safeParse(note, value)
 }
 
-const timestamp = special<`${number}px`>((val) =>
-  typeof val === "string" ? isTimeStamp(val) : false
-)
+const timestamp =
+  special<`${string}-${string}${string} ${string}:${string}:${string}`>(
+    (val) => {
+      const isValid = isTimeStamp(val)
+      console.log({ isValid })
+      return isValid
+    }
+  )
 
 const note = object({
   situation: string([minLength(1), maxLength(255)]),
