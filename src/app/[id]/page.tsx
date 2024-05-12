@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Stack } from "../component"
 import { Card } from "../component/Card"
 import { DateInfo } from "../component/DateInfo"
@@ -18,7 +19,11 @@ export default async function Page(props: { params: { id: string } }) {
   return (
     <main>
       <Stack>
-      <DateInfo date={note.createdAt}/>
+        <Link href={"/"}>
+          投稿画面に戻る
+        </Link>
+        <DateInfo date={note.createdAt} />
+
         {Object.entries(note)
           .filter(([key, _]) => key !== "id" && key !== "createdAt")
           .map(([key, value]) => {
