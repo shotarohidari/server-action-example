@@ -9,7 +9,7 @@ datasource db {
 }
 
 model Note {
-  id    Int     @id @default(autoincrement())
+  id            Int      @id @default(autoincrement())
   situation     String   @db.VarChar(255)
   feeling       String   @db.VarChar(255)
   distortion    String   @db.VarChar(255)
@@ -17,5 +17,5 @@ model Note {
   disproof      String   @db.VarChar(255)
   restructuring String   @db.VarChar(255)
   change        String   @db.VarChar(255)
-  createdAt DateTime @default(now())
+  createdAt     DateTime @default(now())
 }

@@ -9,11 +9,25 @@ export async function insertNote(note: Note) {
       data: note,
     })
     console.log(newNote)
-    // await
+    return newNote
   } catch (e) {
     console.error(e)
-    throw e;
+    throw e
   } finally {
     await prisma.$disconnect()
+  }
+}
+export async function fetchNote(id: number) {
+  try {
+    await prisma.$connect()
+    const note = await prisma.note.findUnique({
+      where: {
+        id,
+      },
+    })
+    return note
+  } catch (e) {
+    console.error(e)
+    throw e
   }
 }
